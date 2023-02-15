@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript program to get the volume of a Cylinder, Sphere and
+    Cone with four decimal places using objects and classes.</h1>
+    
+    <h3 id="answer"></h3>
+    <h3 id="answer1"></h3>
+    <h3 id="answer2"></h3>
+    <script>
+       class cylinder {
+            constructor(radius, height) {
+                this.radius = radius;
+                this.height = height;
+            }
+            getvolume() {
+                let result;
+                result = 3.141 * this.radius * this.radius * this.height;
+                return result.toFixed(4);
+            }
+
+        }
+        class sphere {
+            constructor(radius) {
+                this.radius = radius;
+
+            }
+            getvolume() {
+                let result;
+                result = (4 / 3) * Math.PI * Math.pow(this.radius, 3);
+                return result.toFixed(4);
+            }
+        }
+        class cone {
+            constructor(radius, height) {
+                this.radius = radius;
+                this.height = height;
+            }
+            getvolume() {
+                let result;
+                result = (3.141 * this.radius * this.radius * this.height) / 3;
+                return result.toFixed(4);
+            }
+        }
+
+
+        let Cylinder = new cylinder(23, 23);
+       document.getElementById("answer").innerHTML = "Volume of Cyliner " + Cylinder.getvolume();
+
+        let Cone = new cone(23, 23);
+        document.getElementById("answer1").innerHTML = "Volume of cone " + Cone.getvolume();
+
+        let Sphere = new sphere(23);
+        document.getElementById("answer2").innerHTML = "Volume of Sphere " + Sphere.getvolume();
+
+    
+
+    </script>
+</body>
+</html>
